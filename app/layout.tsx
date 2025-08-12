@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -27,17 +25,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="min-h-screen flex flex-col">
-          <header className="flex items-center justify-between px-6 py-4 border-b bg-background/80 backdrop-blur">
-            <Link href="/" className="text-2xl font-bold">
-              Hashly
-            </Link>
-            <Button asChild>
-              <Link href="/login">Login</Link>
-            </Button>
-          </header>
-          <main className="flex-1">{children}</main>
-        </div>
+        {children}
       </body>
     </html>
   )
